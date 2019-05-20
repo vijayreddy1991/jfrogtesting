@@ -5,3 +5,7 @@ pipelines:
         type: bash
         configuration: 
           priority: 1
+        execution:
+          onExecute:
+            - echo "executing task command 1"
+ 
