@@ -8,3 +8,4 @@ resources:
         only: master
     version:
       sha: master
+      
