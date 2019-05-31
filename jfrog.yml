@@ -1,11 +1,10 @@
-pipelines:
-  - name: pipe1
-    steps:
-      - name: test_step_1
-        type: bash
-        configuration: 
-          priority: 1
-        execution:
-          onExecute:
-            - echo "executing task command 1"
- bhkghuoeq  k;ml
+resources:
+  - name: git
+    type: gitRepo
+    repoPath: vijayreddy1991/jfrogtesting
+    configuration:
+      integrationName: github_vijay
+      branches:
+        only: master
+    version:
+      sha: master
