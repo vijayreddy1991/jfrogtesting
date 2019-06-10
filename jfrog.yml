@@ -27,7 +27,7 @@ pipelines:
         execution:
           onExecute:
             - printenv
-            - pushd $res_gitResource_resPath
+            - pushd $res_gitResource1_resPath
             - docker build -t=u18java:dev .
       - name: testing
         type: Bash
