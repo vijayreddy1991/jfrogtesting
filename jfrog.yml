@@ -41,7 +41,7 @@ pipelines:
             - echo $PATH
         configuration:
           inputSteps:
-            - name: test
+            - name: java
           runtime:
             type: image
             image:
