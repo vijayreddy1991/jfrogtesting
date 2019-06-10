@@ -34,9 +34,9 @@ pipelines:
         execution:
           onExecute:
             - _set_jdk openjdk8
-            - java --version
-            - _set_jdk openjdk8
-            - java --version
+            - java -version
+            - _set_jdk openjdk11
+            - java -version
             - echo $JAVA_HOME
             - echo $PATH
         configuration:
