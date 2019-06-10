@@ -1,11 +1,52 @@
 resources:
-  - name: git
-    type: gitRepo
-    repoPath: vijayreddy1991/jfrogtesting
+  - name: gitResource
+    type: GitRepo
     configuration:
-      integrationName: github_vijay
+      gitProvider: vijay_github
+      path: vijayreddy1991/u18java
+#       files:
+#         only: README|install.sh|node
       branches:
         only: master
+#       tags:
+#         only: tagv*
+#       buildOn:
+#         commit: false
+#       shallowDepth: 2
     version:
       sha: master
+      
+pipelines:
+  - name: pipeline_vijay
+    steps:
+      - name: java
+        type: Bash
+        configuration:
+          inputResources:
+            - name: gitResource
+        execution:
+          onExecute:
+            - printenv
+            - pushd $res_gitResource_resPath
+            - docker build -t=u18java:dev .
+      - name: test1
+        type: Bash
+        execution:
+          onExecute:
+            - _set_jdk openjdk8
+            - java --version
+            - _set_jdk openjdk8
+            - java --version
+            - echo $JAVA_HOME
+            - echo $PATH
+        configuration:
+          inputSteps:
+            - name: test
+          runtime:
+            type: image
+            image:
+              custom:
+                name: /u18java
+                tag: dev
+                autoPull: false
       
