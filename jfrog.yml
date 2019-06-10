@@ -29,7 +29,7 @@ pipelines:
             - printenv
             - pushd $res_gitResource_resPath
             - docker build -t=u18java:dev .
-      - name: test1
+      - name: testing
         type: Bash
         execution:
           onExecute:
@@ -46,7 +46,7 @@ pipelines:
             type: image
             image:
               custom:
-                name: /u18java
+                name: vijayreddy1991/u18java
                 tag: dev
                 autoPull: false
       
