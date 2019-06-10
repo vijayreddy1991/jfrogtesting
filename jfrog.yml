@@ -1,5 +1,5 @@
 resources:
-  - name: gitResource
+  - name: gitResource1
     type: GitRepo
     configuration:
       gitProvider: vijay_github
@@ -23,7 +23,7 @@ pipelines:
         type: Bash
         configuration:
           inputResources:
-            - name: gitResource
+            - name: gitResource1
         execution:
           onExecute:
             - printenv
