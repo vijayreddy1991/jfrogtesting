@@ -41,6 +41,9 @@ pipelines:
             - java -version
             - echo $JAVA_HOME
             - echo $PATH
+            - mvn --version
+            - ant -version
+            - gradle --version
         configuration:
           inputSteps:
             - name: java
