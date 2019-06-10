@@ -46,7 +46,7 @@ pipelines:
             type: image
             image:
               custom:
-                name: vijayreddy1991/u18java
+                name: u18java
                 tag: dev
                 autoPull: false
       
