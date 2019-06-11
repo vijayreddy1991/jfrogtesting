@@ -4,9 +4,9 @@ resources:
     configuration:
       gitProvider: vijay_github
       path: vijayreddy1991/jfrogtesting
-      files:
-        include: jfrog.yml
-#         exclude:   
+#       files:
+#         include: jfrog.yml
+# #         exclude:   
       branches:
         only: master
 #       tags:
