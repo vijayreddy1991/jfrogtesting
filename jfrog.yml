@@ -2,8 +2,8 @@ resources:
   - name: gitResource1
     type: GitRepo
     configuration:
-      gitProvider: vijay_githubas
-      path: vijayreddy1991/jfrogtesting
+      gitProvider: vijay_github
+      path: vijayreddy1991/jfrogtesting122
 #       files:
 #         include: jfrog.yml
 # #         exclude:   
