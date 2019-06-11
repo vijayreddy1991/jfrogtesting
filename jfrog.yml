@@ -3,7 +3,7 @@ resources:
     type: GitRepo
     configuration:
       gitProvider: vijay_github
-      path: vijayreddy1991/jfrogtesting122
+      path: vijayreddy1991/jfrogtesting
 #       files:
 #         include: jfrog.yml
 # #         exclude:   
