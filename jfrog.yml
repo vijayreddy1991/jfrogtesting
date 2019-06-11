@@ -28,6 +28,8 @@ pipelines:
         execution:
           onExecute:
             - printenv
+            
+            
 #       - name: testing
 #         type: Bash
 #         execution:
