@@ -15,7 +15,8 @@ resources:
 #         commit: false
 #       shallowDepth: 2
     version:
-      sha: master      
+      sha: master  
+      
 pipelines:
   - name: pipeline_vijay
     steps:
