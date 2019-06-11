@@ -4,8 +4,9 @@ resources:
     configuration:
       gitProvider: vijay_github
       path: vijayreddy1991/jfrogtesting
-#       files:
-#         only: README|install.sh|node
+      files:
+        include: README.md
+#         exclude:   
       branches:
         only: master
 #       tags:
@@ -22,34 +23,35 @@ pipelines:
       - name: java
         type: Bash
         configuration:
+          nodePool: vijay_u16node        
           inputResources:
             - name: gitResource1
         execution:
           onExecute:
             - printenv
-      - name: testing
-        type: Bash
-        execution:
-          onExecute:
-            - _set_jdk openjdk8
-            - java -version
-            - echo $JAVA_HOME
-            - echo $PATH            
-            - _set_jdk openjdk11
-            - java -version
-            - echo $JAVA_HOME
-            - echo $PATH
-            - mvn --version
-            - ant -version
-            - gradle --version
-        configuration:
-          inputSteps:
-            - name: java
-          runtime:
-            type: image
-            image:
-              custom:
-                name: drydock/u18java
-                tag: master
-                autoPull: true
+#       - name: testing
+#         type: Bash
+#         execution:
+#           onExecute:
+#             - _set_jdk openjdk8
+#             - java -version
+#             - echo $JAVA_HOME
+#             - echo $PATH            
+#             - _set_jdk openjdk11
+#             - java -version
+#             - echo $JAVA_HOME
+#             - echo $PATH
+#             - mvn --version
+#             - ant -version
+#             - gradle --version
+#         configuration:
+#           inputSteps:
+#             - name: java
+#           runtime:
+#             type: image
+#             image:
+#               custom:
+#                 name: drydock/u18java
+#                 tag: master
+#                 autoPull: true
       
