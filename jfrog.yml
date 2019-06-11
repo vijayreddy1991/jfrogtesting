@@ -3,7 +3,7 @@ resources:
     type: GitRepo
     configuration:
       gitProvider: vijay_github
-      path: vijayreddy1991/u18java
+      path: vijayreddy1991/jfrogtesting
 #       files:
 #         only: README|install.sh|node
       branches:
@@ -27,8 +27,6 @@ pipelines:
         execution:
           onExecute:
             - printenv
-            - pushd $res_gitResource1_resourcePath
-            - docker build -t=u18java:dev .
       - name: testing
         type: Bash
         execution:
@@ -52,6 +50,6 @@ pipelines:
             image:
               custom:
                 name: u18java
-                tag: dev
-                autoPull: false
+                tag: master
+                autoPull: true
       
