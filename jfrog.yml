@@ -47,7 +47,6 @@ pipelines:
             - ant -version
       - name: go
         type: Bash
-        execution:
         configuration:
           inputSteps:
             - name: java      
@@ -67,7 +66,6 @@ pipelines:
             - go --version                
       - name: cpp
         type: Bash
-        execution:
         configuration:
           inputSteps:
             - name: go      
