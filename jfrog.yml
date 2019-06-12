@@ -59,7 +59,6 @@ pipelines:
                 autoPull: true
         execution:
           onExecute:
-            - gvm list
             - gvm use 1.11.10 
             - go --version
             - gvm use 1.12.5
