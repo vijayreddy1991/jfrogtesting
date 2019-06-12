@@ -6,7 +6,7 @@ resources:
       path: vijayreddy1991/jfrogtesting
 #       files:
 #         include: jfrog.yml
-# #         exclude:   
+#         exclude:   
       branches:
         only: master
 #       tags:
