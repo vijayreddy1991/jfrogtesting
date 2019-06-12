@@ -19,7 +19,7 @@ resources:
       
 pipelines:
   - name: pipeline_vijay
-#     steps:
+     steps:
 #       - name: java
 #         type: Bash
 #         configuration:
