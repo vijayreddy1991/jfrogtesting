@@ -20,32 +20,66 @@ resources:
 pipelines:
   - name: pipeline_vijay
     steps:
-#       - name: java
-#         type: Bash
-#         configuration:
-#           nodePool: vijay_u16node        
-#           inputResources:
-#             - name: gitResource1
-#         execution:
-#           onExecute:
-#             - printenv            
-      - name: testing
+      - name: java
         type: Bash
-        execution:
-          onExecute:
-            - sudo --version
-            - wget --version
-            - curl --version
-            
-            - gradle --version
         configuration:
-          inputResources:
-            - name: gitResource1        
           runtime:
             type: image
             image:
               custom:
                 name: drydock/u18java
                 tag: master
+                autoPull: true      
+          inputResources:
+            - name: gitResource1
+        execution:
+          onExecute:
+            - printenv 
+            - _set_jdk openjdk8
+            - java -version
+            - echo $JAVA_HOME
+            - echo $PATH
+            - _set_jdk openjdk11
+            - java -version
+            - echo $JAVA_HOME
+            - echo $PATH
+            - mvn --version
+            - ant -version
+      - name: go
+        type: Bash
+        execution:
+        configuration:
+          inputSteps:
+            - name: java      
+          runtime:
+            type: image
+            image:
+              custom:
+                name: drydock/u18go
+                tag: master
                 autoPull: true
+        execution:
+          onExecute:
+            - gvm list
+            - gvm use 1.11.10 
+            - go --version
+            - gvm use 1.12.5
+            - go --version                
+      - name: cpp
+        type: Bash
+        execution:
+        configuration:
+          inputSteps:
+            - name: go      
+          runtime:
+            type: image
+            image:
+              custom:
+                name: drydock/u18cpp
+                tag: master
+                autoPull: true
+        execution:
+          onExecute:
+            - gcc --version
+            - clang --version
       
