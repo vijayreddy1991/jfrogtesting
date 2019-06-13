@@ -23,13 +23,17 @@ pipelines:
       - name: java
         type: Bash
         configuration:
+          nodePool: vijay_node        
           runtime:
             type: image
             image:
-              custom:
-                name: drydock/u18java
-                tag: master
-                autoPull: true      
+              auto:
+                language: java
+#                 versions:            
+#               custom:
+#                 name: drydock/u18java
+#                 tag: master
+#                 autoPull: true      
           inputResources:
             - name: gitResource1
         execution:
@@ -49,19 +53,24 @@ pipelines:
       - name: go
         type: Bash
         configuration:
+          nodePool: vijay_node           
           inputSteps:
             - name: java      
           runtime:
             type: image
             image:
-              custom:
-                name: drydock/u18go
-                tag: master
-                autoPull: true
+              auto:
+                language: go
+#                 versions:            
+#               custom:
+#                 name: drydock/u18go
+#                 tag: master
+#                 autoPull: true
         execution:
           onExecute:
             - source /root/.gvm/scripts/gvm
             - gvm list
+            - go version
             - gvm use 1.11.10 
             - go version
             - gvm use 1.12.5
@@ -69,15 +78,19 @@ pipelines:
       - name: cpp
         type: Bash
         configuration:
+          nodePool: vijay_node           
           inputSteps:
             - name: go      
           runtime:
             type: image
             image:
-              custom:
-                name: drydock/u18cpp
-                tag: master
-                autoPull: true
+              auto:
+                language: cpp
+#                 versions:            
+#               custom:
+#                 name: drydock/u18cpp
+#                 tag: master
+#                 autoPull: true
         execution:
           onExecute:
             - gcc --version
