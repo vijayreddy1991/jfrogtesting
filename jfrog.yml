@@ -35,6 +35,7 @@ pipelines:
         execution:
           onExecute:
             - printenv 
+            - java -version
             - _set_jdk openjdk8
             - java -version
             - echo $JAVA_HOME
@@ -60,6 +61,7 @@ pipelines:
         execution:
           onExecute:
             - source /root/.gvm/scripts/gvm
+            - gvm list
             - gvm use 1.11.10 
             - go version
             - gvm use 1.12.5
