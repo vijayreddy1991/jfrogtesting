@@ -85,7 +85,7 @@ pipelines:
             type: image
             image:
               auto:
-                language: cpp
+                language: c
 #                 versions:            
 #               custom:
 #                 name: drydock/u18cpp
