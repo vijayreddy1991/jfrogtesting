@@ -84,13 +84,13 @@ pipelines:
           runtime:
             type: image
             image:
-#               auto:
-#                 language: c
+              auto:
+                language: c
 #                 versions:            
-              custom:
-                name: drydock/u18cpp
-                tag: master
-                autoPull: true
+#               custom:
+#                 name: drydock/u18cpp
+#                 tag: master
+#                 autoPull: true
         execution:
           onExecute:
             - gcc --version
