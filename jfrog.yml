@@ -66,6 +66,14 @@ pipelines:
                 name: pipelines-docker.jfrog.io/jfrog/pipelines-u18go
                 tag: 0.9.0
                 autoPull: true
+        execution:	       
+          onExecute:	         
+            - source /root/.gvm/scripts/gvm	           
+            - gvm list	            
+            - gvm use 1.11.10 	
+            - go version	
+            - gvm use 1.12.5	
+            - go version                   
 
       - name: node
         type: Bash
