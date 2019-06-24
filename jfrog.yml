@@ -31,8 +31,8 @@ pipelines:
 #                 language: java
 #                 versions:            
               custom:
-                name: drydock/u18java
-                tag: master
+                name: pipelines-docker.jfrog.io/jfrog/pipelines-u18java
+                tag: 0.9.0
                 autoPull: true      
           inputResources:
             - name: gitResource1
@@ -63,8 +63,8 @@ pipelines:
 #                 language: go
 #                 versions:            
               custom:
-                name: drydock/u18go
-                tag: master
+                name: pipelines-docker.jfrog.io/jfrog/pipelines-u18go
+                tag: 0.9.0
                 autoPull: true
         execution:
           onExecute:
@@ -88,8 +88,8 @@ pipelines:
 #                 language: c
 #                 versions:            
               custom:
-                name: drydock/u18cpp
-                tag: master
+                name: pipelines-docker.jfrog.io/jfrog/pipelines-u18cpp
+                tag: 0.9.0
                 autoPull: true
         execution:
           onExecute:
