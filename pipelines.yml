@@ -12,6 +12,7 @@ resources:
       fileLocation: docker-virtual/ubuntu/latest
 #       fileName: manifest.json
 #       fileDateTime: <string> # optional
+
       
 pipelines:
   - name: pipeline_vijay
