@@ -38,7 +38,7 @@ pipelines:
             - printenv 
             - ls -la
             - pwd
-            - pushd java/dependencyState/resources/remotefile
+            - pushd $res_remotefile_resourcePath
             - pwd
             - ls -la
             - java -version
