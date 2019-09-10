@@ -9,7 +9,7 @@ resources:
     type: RemoteFile
     configuration:      
       source: jsonkey
-      fileLocation: storage/browser/testing_automation/test.sh/?project=installer-252005 # optional
+      fileLocation: testing_automation/test.sh/ # optional
 #       fileName: <string> # optional
 #       fileDateTime: <string> # optional
       
