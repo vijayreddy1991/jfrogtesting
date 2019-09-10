@@ -9,7 +9,7 @@ resources:
     type: RemoteFile
     configuration:      
       source: art
-      fileLocation: docker-virtual/ubuntu/latest
+      fileLocation: test-docker-local/vijay
 #       fileName: manifest.json
 #       fileDateTime: <string> # optional
 
