@@ -9,7 +9,7 @@ resources:
     type: RemoteFile
     configuration:      
       source: jsonkey
-      fileLocation: https://console.cloud.google.com/storage/browser/testing_automation/test.sh/?project=installer-252005 # optional
+      fileLocation: console.cloud.google.com/storage/browser/testing_automation/test.sh/?project=installer-252005 # optional
 #       fileName: <string> # optional
 #       fileDateTime: <string> # optional
       
