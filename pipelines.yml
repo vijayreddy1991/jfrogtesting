@@ -42,7 +42,7 @@ pipelines:
             - pushd $res_remotefile_resourcePath
             - pwd
             - ls -la
-            - pushd ubuntu/latest
+            - pushd vijay
             - ls -la
             - java -version
 #             - _set_jdk openjdk8
