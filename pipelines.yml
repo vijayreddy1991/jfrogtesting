@@ -8,9 +8,9 @@ resources:
   - name: remotefile
     type: RemoteFile
     configuration:      
-      source: jsonkey
-      fileLocation: console.cloud.google.com/storage/browser/testing_automation/test.sh/?project=installer-252005 # optional
-#       fileName: <string> # optional
+      source: art
+      fileLocation: docker-virtual/ubuntu/latest
+      fileName: manifest.json
 #       fileDateTime: <string> # optional
       
 pipelines:
@@ -36,17 +36,18 @@ pipelines:
         execution:
           onExecute:
             - printenv 
+            - ls -la
             - java -version
-            - _set_jdk openjdk8
-            - java -version
-            - echo $JAVA_HOME
-            - echo $PATH
-            - _set_jdk openjdk11
-            - java -version
-            - echo $JAVA_HOME
-            - echo $PATH
-            - mvn --version
-            - ant -version
+#             - _set_jdk openjdk8
+#             - java -version
+#             - echo $JAVA_HOME
+#             - echo $PATH
+#             - _set_jdk openjdk11
+#             - java -version
+#             - echo $JAVA_HOME
+#             - echo $PATH
+#             - mvn --version
+#             - ant -version
 #       - name: go
 #         type: Bash
 #         configuration:
