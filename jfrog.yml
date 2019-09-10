@@ -9,9 +9,9 @@ resources:
     type: RemoteFile
     configuration:      
       source: jsonkey
-      fileLocation: <string> # optional
-      fileName: <string> # optional
-      fileDateTime: <string> # optional
+#       fileLocation: <string> # optional
+#       fileName: <string> # optional
+#       fileDateTime: <string> # optional
       
 pipelines:
   - name: pipeline_vijay
