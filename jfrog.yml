@@ -4,18 +4,14 @@ resources:
     configuration:
       gitProvider: vijay_github
       path: vijayreddy1991/jfrogtesting
-#       files:
-#         include: jfrog.yml
-# #         exclude:   
-      branches:
-        only: master
-#       tags:
-#         only: tagv*
-#       buildOn:
-#         commit: false
-#       shallowDepth: 2
-    version:
-      sha: master  
+
+  - name: remotefile
+    type: RemoteFile
+    configuration:      
+      source: jsonkey
+      fileLocation: <string> # optional
+      fileName: <string> # optional
+      fileDateTime: <string> # optional
       
 pipelines:
   - name: pipeline_vijay
@@ -50,72 +46,73 @@ pipelines:
             - echo $PATH
             - mvn --version
             - ant -version
-      - name: go
-        type: Bash
-        configuration:
-#           nodePool: vijay_node           
-          inputSteps:
-            - name: java      
-          runtime:
-            type: image
-            image:
-#               auto:
-#                 language: go
-#                 versions:            
-              custom:
-                name: pipelines-docker.jfrog.io/jfrog/pipelines-u18go
-                tag: 0.9.0
-                autoPull: true
-        execution:	       
-          onExecute:	         
-            - source /root/.gvm/scripts/gvm	           
-            - gvm list	            
-            - gvm use 1.11.10 	
-            - go version	
-            - gvm use 1.12.5	
-            - go version                   
+#       - name: go
+#         type: Bash
+#         configuration:
+# #           nodePool: vijay_node           
+#           inputSteps:
+#             - name: java      
+#           runtime:
+#             type: image
+#             image:
+# #               auto:
+# #                 language: go
+# #                 versions:            
+#               custom:
+#                 name: pipelines-docker.jfrog.io/jfrog/pipelines-u18go
+#                 tag: 0.9.0
+#                 autoPull: true
+#         execution:	       
+#           onExecute:	         
+#             - source /root/.gvm/scripts/gvm	           
+#             - gvm list	            
+#             - gvm use 1.11.10 	
+#             - go version	
+#             - gvm use 1.12.5	
+#             - go version    
+#             - printenv
 
-      - name: node
-        type: Bash
-        configuration:
-#           nodePool: vijay_node           
-          inputSteps:
-            - name: go      
-          runtime:
-            type: image
-            image:
-#               auto:
-#                 language: go
-#                 versions:            
-              custom:
-                name: pipelines-docker.jfrog.io/jfrog/pipelines-u18node
-                tag: 0.9.0
-                autoPull: true
-        execution:
-          onExecute:
-            - node --version
-            - nvm list
+#       - name: node
+#         type: Bash
+#         configuration:
+# #           nodePool: vijay_node           
+#           inputSteps:
+#             - name: go      
+#           runtime:
+#             type: image
+#             image:
+# #               auto:
+# #                 language: go
+# #                 versions:            
+#               custom:
+#                 name: pipelines-docker.jfrog.io/jfrog/pipelines-u18node
+#                 tag: 0.9.0
+#                 autoPull: true
+#         execution:
+#           onExecute:
+#             - node --version
+#             - nvm list
                 
-      - name: cpp
-        type: Bash
-        configuration:
-#           nodePool: vijay_node           
-          inputSteps:
-            - name: node     
-          runtime:
-            type: image
-            image:
-#               auto:
-#                 language: c
-#                 versions:            
-              custom:
-                name: pipelines-docker.jfrog.io/jfrog/pipelines-u18cpp
-                tag: 0.9.0
-                autoPull: true
-        execution:
-          onExecute:
-            - gcc --version
-            - clang --version
+#       - name: cpp
+#         type: Bash
+#         configuration:
+# #           nodePool: vijay_node           
+#           inputSteps:
+#             - name: node     
+#           runtime:
+#             type: image
+#             image:
+# #               auto:
+# #                 language: c
+# #                 versions:            
+#               custom:
+#                 name: pipelines-docker.jfrog.io/jfrog/pipelines-u18cpp
+#                 tag: 0.9.0
+#                 autoPull: true
+#         execution:
+#           onExecute:
+#             - gcc --version
+#             - clang --version
             
             
       
