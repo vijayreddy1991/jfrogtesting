@@ -10,7 +10,7 @@ resources:
     configuration:      
       source: art
       fileLocation: test-docker-local/vijay
-#       fileName: manifest.json
+      fileName: manifest.json
 #       fileDateTime: <string> # optional
 
       
