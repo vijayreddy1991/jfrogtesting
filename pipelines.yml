@@ -10,7 +10,7 @@ resources:
     configuration:      
       source: art
       fileLocation: docker-virtual/ubuntu/latest
-      fileName: manifest.json
+#       fileName: manifest.json
 #       fileDateTime: <string> # optional
       
 pipelines:
