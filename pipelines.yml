@@ -38,6 +38,9 @@ pipelines:
             - printenv 
             - ls -la
             - pwd
+            - pushd java/dependencyState/resources/remotefile
+            - pwd
+            - ls -la
             - java -version
 #             - _set_jdk openjdk8
 #             - java -version
