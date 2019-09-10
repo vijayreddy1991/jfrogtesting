@@ -37,6 +37,7 @@ pipelines:
           onExecute:
             - printenv 
             - ls -la
+            - pwd
             - java -version
 #             - _set_jdk openjdk8
 #             - java -version
